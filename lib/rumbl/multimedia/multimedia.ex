@@ -131,6 +131,13 @@ defmodule Rumbl.Multimedia do
     Ecto.Changeset.put_assoc(changeset, :user, user)
   end
 
+  # category
+  def list_alphabetical_categories do
+    Category
+    |> Category.alphabetical()
+    |> Repo.all()
+  end
+
   # seed functions
   def create_category(name) do
     Repo.get_by(Category, name: name) || Repo.insert!(%Category{name: name})
