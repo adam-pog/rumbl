@@ -33,6 +33,6 @@ defmodule Rumbl.Multimedia.Video do
   defp slugify(str) do
     str
     |> String.downcase()
-    |> Sting.replace(~r/[^\w-]+/u, "-")
+    |> String.replace(~r/[^\w-]+/u, "-")
   end
 end
